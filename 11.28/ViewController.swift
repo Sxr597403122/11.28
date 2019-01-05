@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var aa: UITextField!
     var temp = 0
     var flag = 0
-    var bb:Int = 0
     @IBAction func one(_ sender: Any) {
         aa.text = "1" + aa.text!
     }
@@ -45,46 +44,170 @@ class ViewController: UIViewController {
     }
     @IBAction func ac(_ sender: Any) {
         aa.text = ""
+        temp=0
     }
     @IBAction func sum(_ sender: Any) {
-        flag = 1
-        temp = Int(aa.text!)!
-        aa.text = ""
+        if aa.text != ""
+        {
+            if flag==2
+            {
+                temp=temp - Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            
+            if flag==3
+            {
+                temp=temp * Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            if flag==4
+            {
+                temp=temp / Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            if flag==1
+            {
+                temp=temp + Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            else
+            {
+                temp=Int(aa.text!)!
+                aa.text=""
+            }
+            flag=1
+        }
     }
     @IBAction func jian(_ sender: Any) {
-        flag = 2
-        temp = Int(aa.text!)!
-        aa.text = ""
+        if aa.text != ""
+        {
+            if flag==1
+            {
+                temp=temp + Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            if flag==2
+            {
+                temp=temp - Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            if flag==3
+            {
+                temp=temp * Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            if flag==4
+            {
+                temp=temp / Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            else
+            {
+                temp=Int(aa.text!)!
+                aa.text=""
+            }
+            flag=2
+        }
     }
     
     @IBAction func chu(_ sender: Any) {
-        flag = 3
-        temp = Int(aa.text!)!
-        aa.text = ""
+        if aa.text != ""
+        {
+            if flag==2
+            {
+                temp=temp - Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            
+            if flag==1
+            {
+                temp=temp + Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            if flag==3
+            {
+                temp=temp / Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            if flag==4
+            {
+                temp=temp * Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            else
+            {
+                temp=Int(aa.text!)!
+                aa.text=""
+            }
+            flag=3
+        }
     }
     @IBAction func chen(_ sender: Any) {
-        flag = 4
-        temp = Int(aa.text!)!
-        aa.text = ""
+        if aa.text != ""
+        {
+            if flag==2
+            {
+                temp=temp - Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            
+            if flag==3
+            {
+                temp=temp / Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            if flag==4
+            {
+                temp=temp * Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            if flag==1
+            {
+                temp=temp + Int(aa.text!)!
+                aa.text="\(temp)"
+                aa.text=""
+            }
+            else
+            {
+                temp=Int(aa.text!)!
+                aa.text=""
+            }
+            flag=4
+        }
     }
     @IBAction func denyu(_ sender: Any) {
         if flag == 1
         {
-            bb = temp + Int(aa.text!)!
+            temp = temp + Int(aa.text!)!
         }
         if flag == 2
         {
-            bb = temp - Int(aa.text!)!
+            temp = temp - Int(aa.text!)!
         }
         if flag == 3
         {
-            bb = temp / Int(aa.text!)!
+            temp = temp / Int(aa.text!)!
         }
         if flag == 4
         {
-            bb = temp * Int(aa.text!)!
+            temp = temp * Int(aa.text!)!
         }
-        aa.text = "\(bb)"
+        aa.text = "\(temp)"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
